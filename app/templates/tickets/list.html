@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block container %}
+<h2>Ticket List</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope='col'>Title</th>
+            <th scope='col'>Description</th>
+            <th scope="col">Date Created</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ticket in tickets %}
+        <tr>
+            <td>
+                <a href="{{url_for('.get_ticket', ticket_id=ticket.id)}}">{{ticket.title}}</a>
+            </td>
+            <td>{{ticket.little_description}}</td>
+            <td>{{ticket.created_at}}</td>
+            <td>
+                <a href="{{ url_for('.edit_ticket', ticket_id=ticket.id) }}" class="btn btn-primary btn-sm">Edit</a>
+                <a href="{{ url_for('.delete_ticket', ticket_id=ticket.id) }}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-        <h2>Error 404, website not found.</h2>
-    </body>
-</html>
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    Error 404
+{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>404 Not Found</h2>
+                <p>An error has occurred. Website not found.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
